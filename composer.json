@@ -1,0 +1,11 @@
+{
+    "name": "ahj/outputformat",
+    "description": "Php library to decorate and beautify your standard output inspired by https://github.com/delestro/outputformat",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "OutputFormat\\": "src/"
+        }
+    },
+    "require": {}
+}

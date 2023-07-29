@@ -24,6 +24,6 @@ trait Title
         }
 
         $repeat .= str_repeat($style, $strlen);
-        return $this->text . PHP_EOL . $repeat;
+        return $this->title . PHP_EOL . $repeat;
     }
 }

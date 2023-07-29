@@ -4,12 +4,15 @@ declare(strict_types=1);
 namespace OutputFormat\Traits;
 
 use OutputFormat\Option\ListOption;
+use OutputFormat\Style\OutputStyle;
 
 trait ShowList
 {
-    public function List(array $list, ?ListOption $option = null): string
+    public function List(array $list, ListOption|OutputStyle|string|array $option = null): string
     {
-        $title   = $this->text;
+        if (!$option instanceof ListOption)
+            $option = (new ListOption())->setStyle($option);
+        $title   = $this->title;
         $implode = '';
         $prefix  = $option?->getPrefix($title) ?? '';
         $list    = $option?->getAlign($list)   ?? $list;

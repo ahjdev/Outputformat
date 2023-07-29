@@ -36,12 +36,14 @@ class BarOption
     {
         if (is_array($style))
         {
-            if (empty($affix))
+            if (empty($style))
                 throw new OutputException('EMPTY_ARRAY');
-            if (count($affix) == 1)
-                $affix = array_fill(0, 2, $affix);
+
+            if (count($style) == 1)
+                $style = array_fill(0, 2, $style);
+            $style = array_slice($style, 0, 2);
         }
-        $this->style = [ $style[0], $style[1] ];
+        $this->style = $style;
         return $this;
     }
     
@@ -82,7 +84,7 @@ class BarOption
         if (count($affix) == 1)
             $affix = array_fill(0, 2, $affix);
 
-        $this->affix = [ $affix[0], $affix[1] ];
+        $this->affix = array_slice($affix, 0, 2);
         return $this;
     }
 

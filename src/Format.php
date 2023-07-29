@@ -29,12 +29,13 @@ final class Format
      * Set space for title
      *
      * @param Space $space
-     * @return void
+     * @return self
      */
-    public function setSpace(Space $space)
+    public function setSpace(Space $space):self
     {
         $this->length = mb_strlen($this->defaultText) + $space->getStrlen();
         if (!empty($this->defaultText))
             $this->title = $space->getSpace($this->defaultText, $this->length);
+        return $this;
     }
 }

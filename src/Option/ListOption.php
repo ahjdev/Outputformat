@@ -121,7 +121,7 @@ class ListOption
         $keys = array_keys($args);
         $maxLength = max(array_map('mb_strlen', $keys));
         foreach ($args as $key => $val) {
-            $key .= str_pad('', $maxLength - mb_strlen($key), pad_type: STR_PAD_LEFT);
+            $key .= str_pad('', $maxLength - mb_strlen((string) $key), pad_type: STR_PAD_LEFT);
             $result[$key] = $val;
         }
         return $result;

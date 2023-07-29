@@ -22,7 +22,7 @@ trait Box
         $repeat = str_repeat($box[Position::LINE_HORIZENTAL], $this->length);
         $block  = [
             $box[Position::TOP_LEFT]      . $repeat     . $box[Position::TOP_RIGHT],     // Up Side
-            $box[Position::LINE_VERTICAL] . $this->text . $box[Position::LINE_VERTICAL], // Middle Side
+            $box[Position::LINE_VERTICAL] . $this->title. $box[Position::LINE_VERTICAL], // Middle Side
             $box[Position::BOTTOM_LEFT]   . $repeat     . $box[Position::BOTTOM_RIGHT],  // Down Side
         ];
         return implode(PHP_EOL, $block);

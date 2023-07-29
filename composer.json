@@ -1,5 +1,5 @@
 {
-    "name": "ahj/outputformat",
+    "name": "ahjxd/outputformat",
     "description": "Php library to decorate and beautify your standard output inspired by https://github.com/delestro/outputformat",
     "type": "library",
     "autoload": {
